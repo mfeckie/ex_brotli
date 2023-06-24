@@ -7,7 +7,12 @@ defmodule ExBrotli.MixProject do
       app: :ex_brotli,
       version: @version,
       elixir: "~> 1.14",
+      description: "Elixir wrapper for Rust based brotli compression",
       start_permanent: Mix.env() == :prod,
+      docs: [
+        extras: ["README.md"],
+        main: "readme"
+      ],
       deps: deps()
     ]
   end
@@ -16,6 +21,20 @@ defmodule ExBrotli.MixProject do
   def application do
     [
       extra_applications: [:logger]
+    ]
+  end
+
+  def package do
+    [
+      licenses: ["MIT"],
+      maintainers: ["Martin Feckie"],
+      links: %{
+        "Github" => "https://github.com/mfeckie/ex_brotli"
+      },
+      files: ["lib", "native", "README.md", "mix.exs", "checksum-*.exs"],
+      exclude_patterns: [
+        "native/exbrotli/target"
+      ]
     ]
   end
 
