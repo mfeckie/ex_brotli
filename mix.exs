@@ -1,10 +1,11 @@
 defmodule ExBrotli.MixProject do
   use Mix.Project
+  @version "0.1.0"
 
   def project do
     [
       app: :ex_brotli,
-      version: "0.1.0",
+      version: @version,
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
       deps: deps()
