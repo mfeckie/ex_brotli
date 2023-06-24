@@ -10,4 +10,5 @@ path = "src/lib.rs"
 crate-type = ["cdylib"]
 
 [dependencies]
+brotli = "3.3.4"
 rustler = "0.29.0"
