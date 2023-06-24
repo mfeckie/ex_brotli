@@ -1,11 +1,8 @@
 # ExBrotli
 
-**TODO: Add description**
+Wrapper around [rust-brotli](https://github.com/dropbox/rust-brotli)
 
 ## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `ex_brotli` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -15,7 +12,28 @@ def deps do
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/ex_brotli>.
+# Direct usage
 
+`ExBrotli.compress/1` takes a binary and compresses using Brotli, returns `{:ok, compressed_binary} | {:error, reason}`
+`ExBrotli.compress!/1` takes a binary and compresses using Brotli.  Raise on error.
+
+# Phoenix Asset Compression
+
+Add configuration to `Plug.Static`.
+
+```elixir
+plug Plug.Static,
+ ...
+ brotli: true
+ ```
+ 
+Then tell Phoenix to also compress with Brotli.
+
+```elixir
+# Compression for asset pipeline
+config :phoenix,
+  static_compressors: [
+    Phoenix.Digester.Gzip,
+    ExBrotli.DigesterCompressor
+  ]
+```
