@@ -8,7 +8,7 @@ defmodule ExBrotli do
 
   use RustlerPrecompiled,
     otp_app: :ex_brotli,
-    crate: :exbrotli,
+    crate: :ex_brotli,
     base_url: "https://github.com/mfeckie/ex_brotli/releases/download/#{version}",
     force_build: System.get_env("RUSTLER_PRECOMPILATION_EXAMPLE_BUILD") in ["1", "true"],
     targets: ~w(

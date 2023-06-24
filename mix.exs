@@ -33,7 +33,7 @@ defmodule ExBrotli.MixProject do
       },
       files: ["lib", "native", "README.md", "mix.exs", "checksum-*.exs"],
       exclude_patterns: [
-        "native/exbrotli/target"
+        "native/ex_brotli/target"
       ]
     ]
   end

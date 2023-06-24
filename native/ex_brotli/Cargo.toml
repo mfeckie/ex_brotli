@@ -1,11 +1,11 @@
 [package]
-name = "exbrotli"
+name = "ex_brotli"
 version = "0.1.0"
 authors = []
 edition = "2021"
 
 [lib]
-name = "exbrotli"
+name = "ex_brotli"
 path = "src/lib.rs"
 crate-type = ["cdylib"]
 
