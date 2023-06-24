@@ -19,4 +19,13 @@ defmodule ExBrotli do
       x86_64-unknown-linux-musl
     ),
     version: version
+
+  def compress(_binary), do: :erlang.nif_error(:nif_not_loaded)
+
+  def compress!(binary) do
+    case compress(binary) do
+      {:ok, result} -> result
+      {:error, reason} -> raise reason
+    end
+  end
 end
