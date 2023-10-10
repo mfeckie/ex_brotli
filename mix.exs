@@ -45,7 +45,7 @@ defmodule ExBrotli.MixProject do
       {:rustler_precompiled, "~> 0.6"},
       {:rustler, "~> 0.29", optional: true},
       {:phoenix, ">= 0.0.0"},
-      {:ex_doc, "0.29.4"}
+      {:ex_doc, "~> 0.29", only: :dev}
     ]
   end
 end
