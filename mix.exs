@@ -13,7 +13,8 @@ defmodule ExBrotli.MixProject do
         extras: ["README.md"],
         main: "readme"
       ],
-      deps: deps()
+      deps: deps(),
+      package: package()
     ]
   end
 
