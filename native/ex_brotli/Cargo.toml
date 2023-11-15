@@ -1,6 +1,6 @@
 [package]
 name = "ex_brotli"
-version = "0.1.0"
+version = "0.3.1"
 authors = []
 edition = "2021"
 
@@ -11,4 +11,4 @@ crate-type = ["cdylib"]
 
 [dependencies]
 brotli = "3.3.4"
-rustler = "0.29.0"
+rustler = "0.30.0"

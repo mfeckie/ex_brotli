@@ -49,7 +49,7 @@ dependencies = [
 
 [[package]]
 name = "ex_brotli"
-version = "0.1.0"
+version = "0.3.1"
 dependencies = [
  "brotli",
  "rustler",
@@ -110,9 +110,9 @@ checksum = "436b050e76ed2903236f032a59761c1eb99e1b0aead2c257922771dab1fc8c78"
 
 [[package]]
 name = "rustler"
-version = "0.29.0"
+version = "0.30.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "095fb0fb2864560480609c5b1427fe9f3872f6b3e400036f5531e8f06ff33026"
+checksum = "c4b4fea69e23de68c42c06769d6624d2d018da550c17244dd4b691f90ced4a7e"
 dependencies = [
  "lazy_static",
  "rustler_codegen",
@@ -121,9 +121,9 @@ dependencies = [
 
 [[package]]
 name = "rustler_codegen"
-version = "0.29.0"
+version = "0.30.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a8911f25973c1d68a3ffdea53d664026f6b0877c949bd3f9f5bc263385c33553"
+checksum = "406061bd07aaf052c344257afed4988c5ec8efe4d2352b4c2cf27ea7c8575b12"
 dependencies = [
  "heck",
  "proc-macro2",
