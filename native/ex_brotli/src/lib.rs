@@ -19,4 +19,20 @@ fn compress<'a>(env: Env<'a>, input: Binary) -> NifResult<Term<'a>> {
     }
 }
 
-rustler::init!("Elixir.ExBrotli", [compress]);
+#[rustler::nif]
+fn decompress<'a>(env: Env<'a>, input: Binary) -> NifResult<Term<'a>> {
+    let mut decompressor = brotli::Decompressor::new(input.as_slice(), 4096);
+    
+    let mut decompress_bytes = Vec::new();
+
+    match decompressor.read_to_end(&mut decompress_bytes) {
+        Ok(_) => {
+            let mut binary = OwnedBinary::new(decompress_bytes.len()).unwrap();
+            let _ = binary.as_mut_slice().write_all(&decompress_bytes);
+            Ok((rustler::types::atom::ok(), binary.release(env)).encode(env))
+        }
+        Err(_e) => Ok((rustler::types::atom::error(), "error decompressing payload").encode(env)),
+    }
+}
+
+rustler::init!("Elixir.ExBrotli", [compress, decompress]);

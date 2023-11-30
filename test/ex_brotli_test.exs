@@ -16,4 +16,13 @@ defmodule ExBrotliTest do
   test "Compress!" do
     assert ExBrotli.compress!("hello") == <<11, 2, 128, 104, 101, 108, 108, 111, 3>>
   end
+
+  test "Compress with Phoenix" do
+    assert ExBrotli.DigesterCompressor.compress_file("test.html", "hello") ==
+             {:ok, <<11, 2, 128, 104, 101, 108, 108, 111, 3>>}
+  end
+
+  test "Decompress" do
+    assert ExBrotli.decompress(<<11, 2, 128, 104, 101, 108, 108, 111, 3>>) == {:ok, "hello"}
+  end
 end
