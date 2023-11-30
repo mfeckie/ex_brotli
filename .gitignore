@@ -26,3 +26,5 @@ ex_brotli-*.tar
 /tmp/
 
 priv/native
+
+checksum-*
