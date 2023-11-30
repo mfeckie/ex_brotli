@@ -1,5 +1,5 @@
 {
   "rust-analyzer.linkedProjects": [
-    "native/exbrotli/Cargo.toml"
+    "native/ex_brotli/Cargo.toml"
   ]
 }
