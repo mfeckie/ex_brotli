@@ -13,7 +13,7 @@ defmodule ExBrotli.MixProject do
       start_permanent: Mix.env() == :prod,
       docs: [
         source_url: @source_url,
-        source_ref: "v#{@version}",
+        source_ref: @version,
         extras: ["README.md"],
         main: "readme"
       ],
