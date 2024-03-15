@@ -1,7 +1,7 @@
 defmodule ExBrotli.MixProject do
   use Mix.Project
 
-  @version "0.4.0"
+  @version "0.4.1"
   @source_url "https://github.com/mfeckie/ex_brotli"
 
   def project do
