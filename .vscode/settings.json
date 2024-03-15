@@ -1,5 +1,8 @@
 {
   "rust-analyzer.linkedProjects": [
     "native/ex_brotli/Cargo.toml"
-  ]
+  ],
+  "elixirLS.envVariables": {
+    "FORCE_COMPILE": "true"
+  }
 }
