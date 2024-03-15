@@ -10,7 +10,7 @@ defmodule ExBrotli do
     otp_app: :ex_brotli,
     crate: :ex_brotli,
     base_url: "https://github.com/mfeckie/ex_brotli/releases/download/#{version}",
-    force_build: System.get_env("EX_BROTLI_BUILD") in ["1", "true"],
+    force_build: System.get_env("FORCE_COMPILE") in ["1", "true"],
     targets: ~w(
       aarch64-apple-darwin
       aarch64-unknown-linux-gnu
