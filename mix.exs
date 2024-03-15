@@ -1,6 +1,8 @@
 defmodule ExBrotli.MixProject do
   use Mix.Project
+
   @version "0.4.0"
+  @source_url "https://github.com/mfeckie/ex_brotli"
 
   def project do
     [
@@ -10,6 +12,8 @@ defmodule ExBrotli.MixProject do
       description: "Elixir wrapper for Rust based brotli compression",
       start_permanent: Mix.env() == :prod,
       docs: [
+        source_url: @source_url,
+        source_ref: "v#{@version}",
         extras: ["README.md"],
         main: "readme"
       ],
@@ -30,7 +34,7 @@ defmodule ExBrotli.MixProject do
       licenses: ["MIT"],
       maintainers: ["Martin Feckie"],
       links: %{
-        "Github" => "https://github.com/mfeckie/ex_brotli"
+        "GitHub" => @source_url
       },
       files: ["lib", "native", "README.md", "mix.exs", "checksum-*.exs"],
       exclude_patterns: [
