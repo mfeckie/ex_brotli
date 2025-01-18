@@ -1,14 +1,14 @@
 [package]
-name = "ex_brotli"
-version = "0.3.1"
-authors = []
-edition = "2021"
+  name = "ex_brotli"
+  version = "0.3.1"
+  authors = []
+  edition = "2021"
 
 [lib]
-name = "ex_brotli"
-path = "src/lib.rs"
-crate-type = ["cdylib"]
+  name = "ex_brotli"
+  path = "src/lib.rs"
+  crate-type = ["cdylib"]
 
 [dependencies]
-brotli = "7.0.0"
-rustler = "0.31.0"
+  brotli = "7.0.0"
+  rustler = "0.36.0"

@@ -22,7 +22,7 @@ fn compress<'a>(env: Env<'a>, input: Binary) -> NifResult<Term<'a>> {
 #[rustler::nif]
 fn decompress<'a>(env: Env<'a>, input: Binary) -> NifResult<Term<'a>> {
     let mut decompressor = brotli::Decompressor::new(input.as_slice(), 4096);
-    
+
     let mut decompress_bytes = Vec::new();
 
     match decompressor.read_to_end(&mut decompress_bytes) {
@@ -35,4 +35,4 @@ fn decompress<'a>(env: Env<'a>, input: Binary) -> NifResult<Term<'a>> {
     }
 }
 
-rustler::init!("Elixir.ExBrotli", [compress, decompress]);
+rustler::init!("Elixir.ExBrotli");
