@@ -11,17 +11,6 @@ defmodule ExBrotli do
     crate: :ex_brotli,
     base_url: "https://github.com/mfeckie/ex_brotli/releases/download/#{version}",
     force_build: System.get_env("FORCE_COMPILE") in ["1", "true"],
-    targets: ~w(
-      aarch64-apple-darwin
-      aarch64-unknown-linux-gnu
-      aarch64-unknown-linux-musl
-      riscv64gc-unknown-linux-gnu
-      x86_64-apple-darwin
-      x86_64-pc-windows-msvc
-      x86_64-pc-windows-gnu
-      x86_64-unknown-linux-gnu
-      x86_64-unknown-linux-musl
-    ),
     version: version
 
   @doc """
