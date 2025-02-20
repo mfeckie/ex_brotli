@@ -7,7 +7,7 @@ Wrapper around [rust-brotli](https://github.com/dropbox/rust-brotli)
 ```elixir
 def deps do
   [
-    {:ex_brotli, "~> 0.1.0"}
+    {:ex_brotli, "~> 0.5.0"}
   ]
 end
 ```
