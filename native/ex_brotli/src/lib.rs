@@ -3,7 +3,7 @@ use brotli::CompressorReader;
 use rustler::{Binary, Encoder, Env, NifResult, OwnedBinary, Term};
 use std::io::{Read, Write};
 
-#[rustler::nif]
+#[rustler::nif(schedule = "DirtyCpu")]
 fn compress<'a>(env: Env<'a>, input: Binary) -> NifResult<Term<'a>> {
     let mut compressor = CompressorReader::new(input.as_slice(), 4096, 11, 22);
 
@@ -19,7 +19,7 @@ fn compress<'a>(env: Env<'a>, input: Binary) -> NifResult<Term<'a>> {
     }
 }
 
-#[rustler::nif]
+#[rustler::nif(schedule = "DirtyCpu")]
 fn decompress<'a>(env: Env<'a>, input: Binary) -> NifResult<Term<'a>> {
     let mut decompressor = brotli::Decompressor::new(input.as_slice(), 4096);
 
