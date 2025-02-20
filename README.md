@@ -7,7 +7,7 @@ Wrapper around [rust-brotli](https://github.com/dropbox/rust-brotli)
 ```elixir
 def deps do
   [
-    {:ex_brotli, "~> 0.1.0"}
+    {:ex_brotli, "~> 0.6.0"}
   ]
 end
 ```
@@ -26,7 +26,7 @@ plug Plug.Static,
  ...
  brotli: true
  ```
- 
+
 Then tell Phoenix to also compress with Brotli.
 
 ```elixir
