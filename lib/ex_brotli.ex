@@ -11,7 +11,18 @@ defmodule ExBrotli do
     crate: :ex_brotli,
     base_url: "https://github.com/mfeckie/ex_brotli/releases/download/#{version}",
     force_build: System.get_env("FORCE_COMPILE") in ["1", "true"],
-    version: version
+    version: version,
+    nif_versions: ["2.15", "2.16", "2.17"],
+    targets: [
+      "aarch64-apple-darwin",
+      "aarch64-unknown-linux-gnu",
+      "x86_64-apple-darwin",
+      "x86_64-pc-windows-gnu",
+      "x86_64-pc-windows-msvc",
+      "x86_64-unknown-linux-gnu",
+      "x86_64-unknown-linux-musl",
+      "arm-unknown-linux-gnueabihf"
+    ]
 
   @doc """
   Compress a binary using brotli
